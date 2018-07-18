@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charcset="utf-8">
+    <title>Sample Program</title>
+    <link rel="stylesheet" media="all" href="style.css" data-turbolinks-track="reload" />
+</head>
+<body>
+    <header class="navbar-fixed-top navbar-inverse">
+        <div class="container">
+        <a id="logo">*** Toy-Chat ***</a>
+        <nav>
+           <ul class="nav navbar-nav navbar-right">
+               <li><a href="/">Home</a></li>
+               <li><a href="/login">Logoff</a><li>
+               <li><a href="https://github.com/ychubachi/collaborative_development/blob/master/slides/collaborative_development.org">Help</a><li>
+           </ul>
+        </nav>
+        </div>
+    </header>
+    <%= yield %>
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
+
