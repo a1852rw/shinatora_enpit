@@ -3,16 +3,21 @@ require 'sinatra'
 get "/" do
     erb :index
 end
+# メインページについて記述
+
 
 get '/login' do
     @uname = ""
     erb :login
 end
+# ログインページについて記述、ここで名前を入力する
+
 
 post '/login' do
     @uname = params[:uname]
     erb :message
 end
+# 
 
 
 @@messages = ""
