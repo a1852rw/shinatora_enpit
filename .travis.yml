@@ -5,4 +5,4 @@ rvm:
 bundler_args: "--without development --deployment -j4"
 cache: bundler
 
-script: bundle exec ruby travis_cs_test.rb
+script: ruby travis_cs_test.rb
