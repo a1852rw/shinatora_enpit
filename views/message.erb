@@ -1,9 +1,5 @@
 <ul>
-    <li>Hi, <%= if @uname == ""
-                   @uname = "Guest"
-               end
-               @uname
-            %>!</li>
+    <li>Hi, <%= @uname %>!</li>
     <li>Please submit your message.</li>
     <form method="POST" action="/message">
         <input name="uname" value=<%= @uname %> hidden>
