@@ -6,3 +6,6 @@ bundler_args: "--without development --deployment -j4"
 cache: bundler
 
 script: ruby travis_cs_test.rb
+
+notifications:
+    slack: aiitalphateam:5kVgvMa3dZzBMY8gQBt3hkto
