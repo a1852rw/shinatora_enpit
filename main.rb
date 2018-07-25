@@ -1,4 +1,5 @@
 require 'sinatra'
+# Rubyにおいて「main.rb」はページの構成を規定するファイル
 
 get "/" do
     erb :index
@@ -10,14 +11,14 @@ get '/login' do
     @uname = ""
     erb :login
 end
-# ログインページについて記述、ここで名前を入力する
+# ログインページについて記述、ここでページ情報を読み込む
 
 
 post '/login' do
     @uname = params[:uname]
     erb :message
 end
-# 
+# 入力されたユーザー情報を読み込む
 
 
 @@messages = ""
