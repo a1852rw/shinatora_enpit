@@ -1,0 +1,30 @@
+<!-- require File.expand_path(File.dirname(__FILE__) + '/JsonHelper.rb') -->
+
+<ul>
+   <li>ここにエントリが表示される</li>
+   <!-- <li><%%= @hello %></li> -->
+  
+   <% for r in @raw do %> 
+   <li><%= r[JSON_KeyWord.id]%>, <%= r[JSON_KeyWord.name]%>, <%= r[JSON_KeyWord.context]%>, <%= r[JSON_KeyWord.date]%></li>
+   <% end %>
+   
+   <!-- <li>ID <%= @id%>, Name <%= @name%>, Content <%= @context%>, Date <%= @date%></li> -->
+   
+</ul>
+<ul>
+   <form method="POST" action="/form">
+     
+       <div>
+        <input type="text" name="name" value="" maxlength="10"> 
+      </div>
+
+      <div>
+        <input type="text" name="context" value="" maxlength="100"> 
+      </div>
+     
+      <div>
+        <input type="submit" value="送信"></button>
+      </div>
+       
+   </form>
+</ul>
