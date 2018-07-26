@@ -22,7 +22,7 @@ before do
  
  if ( params[:name] && params[:context] && params[:name] != "" && params[:context] != "")
     element = {
-                JSON_KeyWord.id => j["data"].count + 1,
+                JSON_KeyWord.id => J_Data.getLastID().to_i+1, # j["data"].count + 1,
                 JSON_KeyWord.name => params[:name],
                 JSON_KeyWord.context => params[:context],
                 JSON_KeyWord.date => (Date.today).strftime("%Y/%m/%d %H:%M")

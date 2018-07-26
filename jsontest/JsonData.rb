@@ -54,22 +54,19 @@ def deleteMessage(delete_id)
 
   n = class_variable_get(:@@j)
   key = JSON_KeyWord.id
-  puts "deleteMessage delete Id"
-  puts delete_id
+  # puts "deleteMessage delete Id"
+  # puts delete_id.to_i
   n["data"].each do |data|
-    id = data[key]
-    puts delete_id.class
-    puts id.class
-    if (id == delete_id.to_i)
+    if (data[key] == delete_id.to_i)
       n["data"].delete(data)
       puts "break!"
       break
     end
   end
 
-   n["data"].each do |data|
-    puts data
-   end
+   # n["data"].each do |data|
+   #  puts data
+   # end
 
   n = n.to_json
   File.open("./SaveData.txt", "w") do |f|
@@ -78,6 +75,19 @@ def deleteMessage(delete_id)
 
   loadTextFile()
 end
+
+def findLastId()
+  puts "findLastID BEGIN"
+  n = class_variable_get(:@@j)
+  count = n["data"].count
+  if(count == 0)
+    return 1
+  end
+  puts count
+  puts n["data"][count-1]
+  return n["data"][count-1][JSON_KeyWord.id]
+end
+
 
 class J_Data
   include Singleton
@@ -102,5 +112,9 @@ class J_Data
 
   def self.popData(delete_id)
     deleteMessage(delete_id)
+  end
+
+  def self.getLastID()
+    return findLastId()
   end
 end
