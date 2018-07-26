@@ -12,9 +12,15 @@ before do
   puts  Time.now
 
   puts params
-#  puts params.count if !params.count.blank?
 
-  if (params.count == 2 &&  params[:name] != "" &&  params[:context] != "null")
+  if (params[:delete_id])
+   puts "find delete_id"
+   puts params[:delete_id]
+   J_Data.popData(params[:delete_id])
+   j = J_Data.getData
+ end
+ 
+ if ( params[:name] && params[:context] && params[:name] != "" && params[:context] != "")
     element = {
                 JSON_KeyWord.id => j["data"].count + 1,
                 JSON_KeyWord.name => params[:name],
@@ -23,7 +29,7 @@ before do
                }
     J_Data.putData(element)
     j = J_Data.getData
-  end
+ end
 
   puts "!Before end!"
 end
@@ -58,13 +64,13 @@ end
 
 
 get '/message' do
-    @name = params[:name]
+    @name = params[:name] ? params[:name] : "Guest"
     @raw = j["data"]
     erb :message
 end
 
 post '/message' do
-    @name = params[:name]
+    @name = params[:name] ? params[:name] : "Guest"
     @raw = j["data"]
     erb :message
 end
