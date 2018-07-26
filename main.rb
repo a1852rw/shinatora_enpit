@@ -19,7 +19,7 @@ before do
                 JSON_KeyWord.id => j["data"].count + 1,
                 JSON_KeyWord.name => params[:name],
                 JSON_KeyWord.context => params[:context],
-                JSON_KeyWord.date => Date.today()
+                JSON_KeyWord.date => (Date.today).strftime("%Y/%m/%d %H:%M")
                }
     J_Data.putData(element)
     j = J_Data.getData
