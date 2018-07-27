@@ -1,9 +1,12 @@
+<!DOCTYPE html>
+<!-- require File.expand_path(File.dirname(__FILE__) + '/jsontest/JsonHelper.rb') -->
+
 <ul>
-    <li>Hi, <%= @uname %>!</li>
+    <li>Hi, <%= @name %>!</li>
     <li>Please submit your message.</li>
     <form method="POST" action="/message">
-        <input name="uname" value=<%= @uname %> hidden>
-        <textarea type="text" name="message" value="" rows="10" cols="80"> </textarea><br>
+        <input name="name" value=<%= @name %> hidden>
+        <textarea type="text" name="context" value="" rows="10" cols="80"> </textarea><br>
         <input type="submit" value="submit">
     </form>
 </ul>
@@ -11,5 +14,16 @@
     <li>Messages :</li>
 </ul>
 <ul>
-    <%= @@messages %><br>
+   <% for r in @raw do %> 
+   <li>
+     <form method="POST" action="/message">
+        <label> <%= r[JSON_KeyWord.name]%>, </label>
+        <label> <%= r[JSON_KeyWord.context]%>, </label>
+        <label> <%= r[JSON_KeyWord.date]%> </label>
+        <input type="submit" value="delete">
+        <input name="name" value=<%= @name %> hidden>
+        <input name="delete_id" value=<%= r[JSON_KeyWord.id] %> hidden>
+     </form>
+   </li>
+   <% end %>
 </ul>

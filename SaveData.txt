@@ -1,1 +1,1 @@
-{"data":[{"id":"0","name":"システムコラボ","context":"グループワークの掲示板作りです！","date":"2018-07-25"}]}
+{"data":[{"id":6,"name":"Guest","context":" asdfasd","date":"2018/07/26 00:00"},{"id":13,"name":"Guest","context":" asdfasd","date":"2018/07/26 00:00"},{"id":14,"name":"Guest","context":" ,,","date":"2018/07/26 00:00"},{"id":15,"name":"Guest","context":" ","date":"2018/07/26 00:00"}]}
