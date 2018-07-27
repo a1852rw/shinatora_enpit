@@ -1,3 +1,5 @@
+# Rubyにおいて「main.rb」はページの構成を規定するファイル
+
 require 'sinatra'
 require 'json'
 require 'date'
@@ -13,7 +15,7 @@ before do
 
   puts params
 
-  if (params[:delete_id])
+ if (params[:delete_id])
    puts "find delete_id"
    puts params[:delete_id]
    J_Data.popData(params[:delete_id])
@@ -40,15 +42,18 @@ after do
   puts "!After end!"
 end
 
-
 get "/" do
     erb :index
 end
+# メインページについて記述
+
 
 get '/login' do
     @name = ""
     erb :login
 end
+# ログインページについて記述、ここでページ情報を読み込む
+
 
 post '/login' do
     @name = params[:name]
@@ -62,13 +67,14 @@ post '/login' do
     erb :message
 end
 
-
+# 入力されたユーザー情報を読み込む
 get '/message' do
     @name = params[:name] ? params[:name] : "Guest"
     @raw = j["data"]
     erb :message
 end
 
+# 入力されたユーザー情報を書き込む
 post '/message' do
     @name = params[:name] ? params[:name] : "Guest"
     @raw = j["data"]
