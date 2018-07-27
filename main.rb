@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Rubyにおいて「main.rb」はページの構成を規定するファイル
 
 require 'sinatra'
@@ -27,7 +28,7 @@ before do
                 JSON_KeyWord.id => J_Data.getLastID().to_i+1, # j["data"].count + 1,
                 JSON_KeyWord.name => params[:name],
                 JSON_KeyWord.context => params[:context],
-                JSON_KeyWord.date => (Date.today).strftime("%Y/%m/%d %H:%M")
+                JSON_KeyWord.date => Time.now.strftime("%Y/%m/%d %H:%M")
                }
     J_Data.putData(element)
     j = J_Data.getData
