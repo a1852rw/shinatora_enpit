@@ -16,9 +16,13 @@
 <ul>
    <% for r in @raw do %> 
    <li>
-     <%= r[JSON_KeyWord.id]%>, <%= r[JSON_KeyWord.name]%>, <%= r[JSON_KeyWord.context]%>, <%= r[JSON_KeyWord.date]%>, <form method="POST" action="/message"> <input type="submit" value="delete">
-            <input name="name" value=<%= @name %> hidden>
-            <input name="delete_id" value=<%= r[JSON_KeyWord.id] %> hidden>
+     <form method="POST" action="/message">
+        <label> <%= r[JSON_KeyWord.name]%>, </label>
+        <label> <%= r[JSON_KeyWord.context]%>, </label>
+        <label> <%= r[JSON_KeyWord.date]%> </label>
+        <input type="submit" value="delete">
+        <input name="name" value=<%= @name %> hidden>
+        <input name="delete_id" value=<%= r[JSON_KeyWord.id] %> hidden>
      </form>
    </li>
    <% end %>
