@@ -24,10 +24,12 @@ before do
  end
  
  if ( params[:name] && params[:context] && params[:name] != "" && params[:context] != "")
+    @context = params[:context].gsub(/</, "&lt")
+    @context = @context.gsub(/>/, "&gt")
     element = {
                 JSON_KeyWord.id => J_Data.getLastID().to_i+1, # j["data"].count + 1,
                 JSON_KeyWord.name => params[:name],
-                JSON_KeyWord.context => params[:context],
+                JSON_KeyWord.context => @context,
                 JSON_KeyWord.date => Time.now.strftime("%Y/%m/%d %H:%M")
                }
     J_Data.putData(element)
