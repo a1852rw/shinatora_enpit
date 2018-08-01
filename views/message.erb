@@ -3,19 +3,19 @@
 
 <ul>
     <li>Hi, <%= @name %>!</li>
-    <li>Please submit your message.</li>
+    <li>Please submit your message.</li>               
     <form method="POST" action="/message">
         <input name="name" value=<%= @name %> hidden>
-        <textarea type="text" name="context" value="" rows="10" cols="80"> </textarea><br>
-        <input type="submit" value="submit">
+        <textarea type="text" name="context" value="" rows="10" cols="80"> </textarea><br>        
+	<input type="submit" value="submit">
     </form>
-
+    
     <form method="POST" action="/message">
       <input type="submit" value="reload">
       <input name="name" value=<%= @name %> hidden>
       <input name="reload" value="reload" hidden>
     </form>
-
+    
 </ul>
 
 <ul>
