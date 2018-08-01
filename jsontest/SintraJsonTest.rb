@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+# このファイルは動作確認のために作られました。2018/8/1現在プログラムの動作には関与しません
+
 require 'sinatra'
 require 'json'
 require "date"

@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+
+# テキストデータのJSON形式での保存と、そのデータの呼び出しを行うプログラムです
+# JsonHelperはそれを支援します
+
 require 'json'
 require "date"
 require 'singleton'
