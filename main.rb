@@ -36,6 +36,10 @@ before do
     j = J_Data.getData
  end
 
+ if (params[:reload])
+   j = J_Data.getData
+ end
+
   puts "!Before end!"
 end
 

@@ -9,7 +9,15 @@
         <textarea type="text" name="context" value="" rows="10" cols="80"> </textarea><br>
         <input type="submit" value="submit">
     </form>
+
+    <form method="POST" action="/message">
+      <input type="submit" value="reload">
+      <input name="name" value=<%= @name %> hidden>
+      <input name="reload" value="reload" hidden>
+    </form>
+
 </ul>
+
 <ul>
     <li>Messages :</li>
 </ul>
