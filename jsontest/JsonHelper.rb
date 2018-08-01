@@ -1,3 +1,5 @@
+# JsonDataとともに動作しテキストデータのJSON形式での保存と呼び出しを支援します
+
 require 'json'
 
 module JSON
