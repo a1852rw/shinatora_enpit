@@ -8,7 +8,7 @@ Git-Hubに数ある中からこのページをご覧いただきありがとう�
 
 - 名前：TOY CHAT
 - カテゴリ：Webチャット
-- 開発言語：Ryby on Shinatora
+- 開発言語：Ryby on Sinatra
 - 開発人数：3名
 
 詳しくはdocumentフォルダ内の「SinatoraWebApplication.pdf」ファイルかWikiサイトを参照してください。
