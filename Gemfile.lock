@@ -3,7 +3,7 @@ GEM
   specs:
     mustermann (1.0.2)
     power_assert (0.2.2)
-    rack (2.0.5)
+    rack (2.2.3)
     rack-protection (2.0.3)
       rack
     rack-test (1.1.0)
